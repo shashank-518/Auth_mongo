@@ -2,17 +2,48 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Axios } from "axios";
+import axios from "axios";
 
 
 export default function Signup() {
+
+  const router = useRouter();
+
     const [user , setUser] = React.useState({
         username:"",
         email:"",
         password:"",
     });
 
-    const onSignup = async()=>{}
+    const [buttonDisabled , setbuttonDisabled ] = React.useState(true)
+
+
+
+
+    const onSignup = async()=>{
+      try{
+        const response = await axios.post("/api/Users/Signup", user)
+        router.push("/Login")
+
+      }catch(error){
+        console.log(error)
+        
+
+      }
+    }
+
+
+    React.useEffect(()=>{
+
+      if(user.username.length > 0 && user.email.length > 0 && user.password.length > 0){
+        setbuttonDisabled(true)
+      }
+      else{
+        setbuttonDisabled(false)
+      }
+      console.log(user)
+
+    },[user])
 
 
     return (
@@ -63,7 +94,7 @@ export default function Signup() {
             onClick={onSignup}
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition duration-300 font-semibold mt-5"
           >
-            Signup Here
+            {buttonDisabled ? "Sign Up" : "Fill the form"}
           </button>
 
           <div>
