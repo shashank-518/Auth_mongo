@@ -6,8 +6,6 @@ import { Axios } from "axios";
 
 
 export default function Signup() {
-
-
     const [user , setUser] = React.useState({
         username:"",
         email:"",
