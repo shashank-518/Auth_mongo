@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { use, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Axios } from "axios";
+import axios, { Axios } from "axios";
 
 export default function Login() {
+
+
+  const router  = useRouter();
 
 
     const [user , setUser] = React.useState({
@@ -12,7 +15,30 @@ export default function Login() {
         password:"",
     });
 
-    const onLogin = async()=>{}
+    const [buttonDisabled , setbuttonDisabled] = React.useState(false);
+
+
+    useEffect(()=>{
+
+      if(user.email === "" || user.password === ""){
+        setbuttonDisabled(true);
+      }else{
+        setbuttonDisabled(false);
+      }
+    },[user])
+
+
+    const onLogin = async()=>{
+      try {
+
+        const response = await axios.post("/api/Users/Login" ,  user) 
+        router.push("/Profile")
+        
+      } catch (error) {
+        console.log("There is an error");
+        console.log(error);
+      }
+    }
 
 
     return (
@@ -52,7 +78,7 @@ export default function Login() {
             onClick={onLogin}
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition duration-300 font-semibold mt-5"
           >
-            Login Here
+            {buttonDisabled ? "Loading..." : "Login"}
           </button>
 
           <div>

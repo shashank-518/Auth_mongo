@@ -27,8 +27,7 @@ export default function Signup() {
 
       }catch(error){
         console.log(error)
-        
-
+      
       }
     }
 
@@ -41,7 +40,6 @@ export default function Signup() {
       else{
         setbuttonDisabled(false)
       }
-      console.log(user)
 
     },[user])
 
