@@ -48,7 +48,9 @@ export const sendmailer = async ({ email, emailType, userId }: any) => {
             </p>`,
     };
 
-    
+    const mailresponse = await transport.sendMail(mailoptions);
+
+    return mailresponse;
 
 
 
