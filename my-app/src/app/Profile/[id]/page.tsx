@@ -4,8 +4,6 @@
 export default async function UserProfile({ params} :any) {
 
    const { id } = await params
-
-  console.log(id);
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
