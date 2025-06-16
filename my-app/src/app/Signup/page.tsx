@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 
 
+
 export default function Signup() {
 
   const router = useRouter();
@@ -42,6 +43,7 @@ export default function Signup() {
       }
 
     },[user])
+
 
 
     return (
@@ -94,6 +96,9 @@ export default function Signup() {
           >
             {buttonDisabled ? "Sign Up" : "Fill the form"}
           </button>
+
+
+          
 
           <div>
             <Link href="Login">Vist Login Page</Link>
