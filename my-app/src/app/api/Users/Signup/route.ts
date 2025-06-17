@@ -32,6 +32,8 @@ export async function POST(req: NextRequest) {
 
         await sendmailer({email , emailType:"VERIFY", userId: savedUser._id})
 
+        
+
         return NextResponse.json({
             message:"User created successfully" ,
             
