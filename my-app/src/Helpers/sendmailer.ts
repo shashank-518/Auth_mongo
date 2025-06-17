@@ -20,12 +20,12 @@ export const sendmailer = async ({ email, emailType, userId }: any) => {
     } else if (emailType === "RESET") {
         await User.findByIdAndUpdate(userId, {
             $set: {
-                resetToken: hashedtoken,
-                resetTokenExpiry: Date.now() + 3600000,
+                forgotPasswordToken: hashedtoken,
+                forgotPasswordTokenExpiry: Date.now() + 3600000,
             },
         });
     }
-    
+     
     
 
     const transport = nodemailer.createTransport({

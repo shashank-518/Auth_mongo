@@ -6,21 +6,28 @@ import bcrypt from "bcryptjs";
 
 connect()
 
-export default async function POST(request:NextRequest){
+export async function POST(request:NextRequest){
 
 
     try {
 
         const reqbody = await request.json()
 
+       
+        
+
     const {token,password} = reqbody;
+
+       
+        
+        
 
      const user = await User.findOne({
             forgotPasswordToken:token,
             forgotPasswordTokenExpiry:{$gt:Date.now()},
         })
 
-    console.log(user);
+    
 
         if(!user){
             return NextResponse.json({error:"Invalid token or token expired"},{status:400})
@@ -39,7 +46,8 @@ export default async function POST(request:NextRequest){
 
         
     } catch (error:any) {
-
+        console.log("hiii");
+        
         return NextResponse.json({error:error.message})
         
     }
