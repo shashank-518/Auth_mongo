@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { sendmailer } from "@/Helpers/sendmailer";
 
 
 
@@ -18,6 +19,8 @@ export default function Signup() {
 
     const [buttonDisabled , setbuttonDisabled ] = React.useState(true)
 
+
+    
 
 
 
@@ -89,6 +92,8 @@ export default function Signup() {
               className="w-full mt-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
             />
           </div>
+
+          {/* <button type="submit" onClick={onReset}  >Reset Password</button> */}
 
           
           <button
