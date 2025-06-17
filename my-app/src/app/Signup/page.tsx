@@ -24,10 +24,12 @@ export default function Signup() {
     const onSignup = async()=>{
       try{
         const response = await axios.post("/api/Users/Signup", user)
+        console.log("hello");
+        
         router.push("/Login")
 
-      }catch(error){
-        console.log(error)
+      }catch(error:any){
+        console.log(error.message)
       
       }
     }

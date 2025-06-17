@@ -8,12 +8,12 @@ import { sendmailer } from "@/Helpers/sendmailer";
 connect()
 
 
-export default async function POST(request:NextRequest){
+export  async function POST(request:NextRequest){
 
     try {
 
         const reqBody = await request.json()
-        const {email,token} = reqBody
+        const {token} = reqBody
 
         console.log(reqBody);
 
