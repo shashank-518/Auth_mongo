@@ -1,6 +1,9 @@
 # 🔐 Full Stack Authentication Website
 
-A secure and responsive full-stack authentication web application built using **Next.js**, **MongoDB**, **Tailwind CSS**, and **Node.js**. This project includes user registration, email verification, login, logout, password reset, and protected routes.
+🌐 Live Demo: https://authmongo.vercel.app/
+
+A secure and responsive full-stack authentication web application built using Next.js, MongoDB, Tailwind CSS, and Node.js. This project includes user registration, email verification, login, logout, password reset, and protected routes.
+
 
 ## 🚀 Features
 
