@@ -33,7 +33,7 @@ export const sendmailer = async ({ email, emailType, userId }: any) => {
       port: 2525,
       auth: {
         user: process.env.NODEMAILER_USERNAME,
-        pass: process.env.NODEMAILER_PASSWORD,
+        pass: "6ab52eb5a9c0bb",
       },
     });
 
