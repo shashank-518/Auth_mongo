@@ -1,8 +1,6 @@
 import nodemailer from "nodemailer";
 import bcrypt from "bcryptjs";
 import User from "@/Models/userModels";
-import { NextResponse } from "next/server";
-import { log } from "console";
 
 export const sendmailer = async ({ email, emailType, userId }: any) => {
   try {

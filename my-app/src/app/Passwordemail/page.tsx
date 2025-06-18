@@ -12,7 +12,7 @@ export default  function Handler(){
     const sendmail = async()=>{
 
         try{
-            const response = await axios.post('/api/Users/ForgetPassword' , {email})
+             await axios.post('/api/Users/ForgetPassword' , {email})
 
 
         }

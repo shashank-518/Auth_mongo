@@ -31,7 +31,7 @@ export default function Login() {
     const onLogin = async()=>{
       try {
 
-        const response = await axios.post("/api/Users/Login" ,  user) 
+        await axios.post("/api/Users/Login" ,  user) 
         router.push("/Profile")
         
       } catch (error) {
