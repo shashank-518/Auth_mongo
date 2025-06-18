@@ -1,8 +1,8 @@
 "use client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { NextRequest, NextResponse } from "next/server";
-import React, { use, useEffect, useState } from "react";
+import { NextResponse } from "next/server";
+import React, {  useEffect, useState } from "react";
 
 export default function Handle() {
   const router = useRouter()

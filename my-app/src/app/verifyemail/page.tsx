@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 
-export default  function verifyuserEmail(){
+export default  function VerifyuserEmail(){
     const [token,setToken] = useState("")
     const [verify , setVerify] = useState(false)
     const [error , setError] = useState(false)

@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { sendmailer } from "@/Helpers/sendmailer";
 
 export default function Signup() {
   const router = useRouter();
