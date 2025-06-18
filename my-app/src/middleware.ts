@@ -28,6 +28,6 @@ export const config = {
     '/Profile/:path*',
     '/Login',
     '/Signup',
-
+    '/resetpassword'
   ]
 }
