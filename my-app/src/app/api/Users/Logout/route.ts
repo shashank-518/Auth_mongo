@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+
 import { NextResponse } from "next/server";
 
 
@@ -15,9 +15,10 @@ export async function GET(){
     
     return response
         
-    } catch (error) {
+    } catch (error:any) {
 
         return NextResponse.json({
+            error,
             message: "logout failed",
             success: false
         })

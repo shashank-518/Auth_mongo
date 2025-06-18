@@ -13,7 +13,7 @@ export default function Handle() {
 
   const Changepass = async () => {
     try {
-      const pass = await axios.post("/api/Users/Resetpassword", {
+      await axios.post("/api/Users/Resetpassword", {
         password,
         token,
       });
@@ -21,7 +21,7 @@ export default function Handle() {
       setverify(true);
     } catch (error) {
       setError(true)
-      return NextResponse.json({ error: "Failed to change password" });
+      return NextResponse.json({ error ,message: "Failed to change password" });
     }
   };
 

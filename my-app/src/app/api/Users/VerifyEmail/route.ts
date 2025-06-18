@@ -1,8 +1,7 @@
 import User from "@/Models/userModels";
 import { NextRequest, NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
-import { error } from "console";
-import { sendmailer } from "@/Helpers/sendmailer";
+
 
 
 connect()
@@ -15,7 +14,7 @@ export  async function POST(request:NextRequest){
         const reqBody = await request.json()
         const {token} = reqBody
 
-        console.log(reqBody);
+        
 
         const user = await User.findOne({
             verifyToken:token,
